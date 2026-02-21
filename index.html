@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JSON Formatter Tool</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>JSON Formatter Tool</h1>
+        <p class="subtitle">
+          Upload a .json file or paste JSON, then click Format.
+        </p>
+      </header>
+
+      <main class="main">
+        <section class="input-panel">
+          <label class="file-label">
+            Upload .json file
+            <input type="file" id="fileInput" accept="application/json,.json" />
+          </label>
+
+          <label class="paste-label">
+            Paste JSON
+            <textarea
+              id="inputText"
+              placeholder="Paste JSON here..."></textarea>
+          </label>
+
+          <div class="controls">
+            <button id="formatBtn" class="btn">Format JSON</button>
+          </div>
+
+          <div
+            id="message"
+            class="message"
+            role="status"
+            aria-live="polite"></div>
+        </section>
+
+        <section class="output-panel">
+          <div class="output-header">
+            <h2>Output</h2>
+            <div class="output-actions">
+              <button id="copyBtn" class="btn btn-small">Copy</button>
+              <button id="downloadBtn" class="btn btn-small">Download</button>
+            </div>
+          </div>
+          <pre id="output" class="output" aria-live="polite"></pre>
+        </section>
+      </main>
+    </div>
+
+    <div id="adOverlay" class="overlay hidden" role="dialog" aria-modal="true">
+      <div class="ad-box">
+        <h3>Advertisement</h3>
+        <p class="ad-text">Please wait while we show a short message.</p>
+        <div class="timer">Formatting in <span id="countdown">5</span>s</div>
+        <div class="ad-actions">
+          <button id="cancelAd" class="btn btn-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
